@@ -1,0 +1,50 @@
+{
+  "name": "threeVP-Playground",
+  "version": "0.19.313",
+  "license": "MIT",
+  "description": "Boilerplate for threeVP",
+  "repository": "",
+  "keywords": [
+    "three.js",
+    "WebGL",
+    "stuff"
+  ],
+  "author": "i3ernie",
+  "contributors": [],
+  "dependencies": {
+    "threeVP": "git://github.com/i3ernie/threeVP.js.git",
+    "threeVP-Extras": "git://github.com/i3ernie/threeVP-Extras.js.git"
+  },
+  
+  "devDependencies": {
+    "lodash" : "latest",
+    "gulp"              : "latest",
+    "gulp-load-plugins" : "latest",
+    "gulp-requirejs"    : "latest",
+    "gulp-uglify"       : "latest",
+        
+    "requirejs"         : "latest",
+    "requirejs-less"    : "latest",
+    "requirejs-plugins" : "latest",
+    "requirejs-text"    : "latest"
+  },
+  "directories": {
+    "doc" : "docs",
+    "test" : "test",
+    "dist" : "dist",
+    "src" : "src"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/pack.js",
+    "dist/pack.min.js",
+    "package.json",
+    "src"
+  ],
+  "scripts": {
+    "update"    : "npm update",
+    "build"     : "gulp build",
+    "init"      : "gulp init"
+  }
+}
