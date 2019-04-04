@@ -1,0 +1,4 @@
+{
+    "ui" : ["default/nls/ui"],
+    "colors" : ["default/nls/colors"]
+}

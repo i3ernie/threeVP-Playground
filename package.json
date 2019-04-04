@@ -1,6 +1,6 @@
 {
   "name": "threeVP-Playground",
-  "version": "0.19.313",
+  "version": "0.19.404",
   "license": "MIT",
   "description": "Boilerplate for threeVP",
   "repository": "",
@@ -12,7 +12,6 @@
   "author": "i3ernie",
   "contributors": [],
   "dependencies": {
-    "threeVP": "git://github.com/i3ernie/threeVP.js.git",
     "threeVP-Extras": "git://github.com/i3ernie/threeVP-Extras.js.git"
   },
   

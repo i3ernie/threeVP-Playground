@@ -4,36 +4,42 @@
  * and open the template in the editor.
  */
 
-define(["module",
+define(["module", 
     'lodash', "cmd", "three", "async", "Viewport", 
-    "modules/default/Menu/Module",
-    "plugins/plg.i18n", "json!conf/default/locales.json"
+    "modules/default/Menu/Module", "plugin",
+    "plugins/default/plg.i18n", "json!conf/default/locales.json"
 ], 
-function(module, _, CMD, THREE, async, Viewport, MMenu, PlgI18n, locales ){
+function( module, 
+_, CMD, THREE, async, Viewport, 
+MMenu, Plugin, 
+PlgI18n, locales ){
+    
+    let Data = {
+        plugins : [],
+        locales : locales,
+        CMD : CMD
+    };
 
     let APP = {
         init : function(){
             let scope = this;
             
-            new PlgI18n();
+            Data.plugins.push( new PlgI18n() );
             
             CMD.trigger( "initAPP", this );
             
             this.VP = new Viewport( );
             this.VP.init();
             
-            async.waterfall( this.initFunctions, function( err, results ){
-                if ( !err ) {
-                    scope.locale = results.locale;
+            Plugin.initPlugins(Data, function( err, res ){
+                if (!err) {
+                    scope.locale = Data.locale;
                     CMD.trigger("appInitialized", scope);
+                } else {
+                    
                 }
             });
-        },
-        
-        initFunctions : [function( done ){ done(null, {locales:locales} ); }],
-        
-        addInit : function( fnc ){
-            if ( typeof fnc === "function") this.initFunctions.push( fnc );
+            
         },
         
         start : function(){
